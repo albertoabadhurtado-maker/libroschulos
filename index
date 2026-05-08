@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>LibrosChulos</title>
+
+  <style>
+    body{
+      font-family: Arial;
+      margin:0;
+      background:#f4f4f4;
+    }
+
+    header{
+      background:orange;
+      color:white;
+      padding:20px;
+      text-align:center;
+    }
+
+    .contenedor{
+      max-width:800px;
+      margin:auto;
+      padding:20px;
+    }
+
+    .libro{
+      background:white;
+      padding:15px;
+      margin-bottom:15px;
+      border-radius:10px;
+    }
+
+    input, textarea{
+      width:100%;
+      padding:10px;
+      margin:5px 0;
+    }
+
+    button{
+      background:orange;
+      color:white;
+      border:none;
+      padding:10px;
+      cursor:pointer;
+      border-radius:5px;
+      width:100%;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>📚 LibrosChulos</h1>
+  <p>Deja tu opinión sobre libros</p>
+</header>
+
+<div class="contenedor">
+
+  <h2>Libros populares</h2>
+
+  <div class="libro">
+    <h3>1984</h3>
+    <p>★★★★★</p>
+    <p>Libro sobre un mundo controlado por el gobierno.</p>
+  </div>
+
+  <div class="libro">
+    <h3>El Hobbit</h3>
+    <p>★★★★☆</p>
+    <p>Una aventura fantástica muy entretenida.</p>
+  </div>
+
+  <h2>Añadir opinión</h2>
+
+  <input id="titulo" placeholder="Título del libro">
+  <textarea id="opinion" placeholder="Escribe tu opinión"></textarea>
+
+  <button onclick="añadirLibro()">Publicar</button>
+
+  <div id="lista"></div>
+
+</div>
+
+<script>
+function añadirLibro() {
+  let titulo = document.getElementById("titulo").value;
+  let opinion = document.getElementById("opinion").value;
+
+  if(titulo === "" || opinion === ""){
+    alert("Rellena todo");
+    return;
+  }
+
+  let div = document.createElement("div");
+  div.className = "libro";
+  div.innerHTML = `
+    <h3>${titulo}</h3>
+    <p>Opinión:</p>
+    <p>${opinion}</p>
+  `;
+
+  document.getElementById("lista").appendChild(div);
+
+  document.getElementById("titulo").value = "";
+  document.getElementById("opinion").value = "";
+}
+</script>
+
+</body>
+</html>
+git init
+git add .
+git commit -m "primera version libroschulos"
+git remote add origin https://github.com/albertoabadhurtado-maker/libroschulos.git
+git branch -M main
+git push -u origin main
+
