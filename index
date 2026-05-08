@@ -117,3 +117,6 @@ git remote add origin https://github.com/albertoabadhurtado-maker/libroschulos.g
 git branch -M main
 git push -u origin main
 
+git add .
+git commit -m "subiendo web"
+git push
